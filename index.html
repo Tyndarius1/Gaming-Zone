@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="images/favicon.ico">
+    <title>Gaming Zone - Ultimate Gaming Blog</title>
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Orbitron', sans-serif;
+            background-color: #0a0a0a;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+
+        
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: linear-gradient(135deg, #ff00ff, #ff8800);
+            padding: 12px 20px;
+            box-shadow: 0 4px 10px rgba(255, 0, 255, 0.3);
+            position: relative;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.7);
+        }
+
+        .navbar {
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 8px 14px;
+            transition: 0.3s;
+        }
+
+        .navbar a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+        }
+
+        .menu-icon {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        .banner {
+            background: url('gaming-banner.jpg') center/cover no-repeat;
+            height: 280px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: bold;
+            text-shadow: 4px 4px 15px black;
+            border-bottom: 4px solid #ff0080;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .game-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            justify-items: center;
+        }
+
+        .game {
+            background: #111;
+            padding: 18px;
+            border-radius: 12px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(255, 0, 255, 0.3);
+        }
+
+        .game:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(255, 0, 255, 0.6);
+        }
+
+        .game img,  .review img, .news-item img {
+            width: 150px; 
+    height: 150px; 
+    object-fit: cover; 
+    border-radius: 8px;
+        }
+
+        .ad {
+            background: #222;
+            padding: 18px;
+            margin: 25px 0;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+
+        .video-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .video {
+            width: 100%;
+            max-width: 340px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        footer {
+            background: #111;
+            padding: 15px;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 15px;
+            border-top: 4px solid #ff00ff;
+        }
+
+
+
+        .review-container, .news-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+    }
+    .review, .news-item {
+        background: #111;
+        padding: 15px;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 0 10px rgba(255, 0, 255, 0.3);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .review:hover, .news-item:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 15px rgba(255, 0, 255, 0.6);
+    }
+    
+    .review-content {
+        padding: 10px;
+    }
+    .read-more {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 8px 12px;
+        background: #ff00ff;
+        color: white;
+        text-decoration: none;
+        border-radius: 6px;
+        transition: background 0.3s;
+    }
+    .read-more:hover {
+        background: #ff8800;
+    }
+
+
+        .star-rating {
+        font-size: 20px;
+        color: gold;
+        letter-spacing: 3px;
+    }
+
+    
+
+     @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+
+            .navbar {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background: rgba(0, 0, 0, 0.9);
+                position: absolute;
+                top: 100%;
+                left: 0;
+                text-align: center;
+            }
+
+            .navbar a {
+                padding: 12px;
+                display: block;
+            }
+
+            .show {
+                display: flex;
+            }
+
+            .banner {
+                font-size: 20px;
+                height: 180px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .game-container {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+
+            .review-container, .news-container {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+
+            .banner {
+                font-size: 18px;
+                height: 150px;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">🎮 Gaming Zone</div>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#games">Games</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#news">News</a>
+            <a href="#videos">Videos</a>
+        </nav>
+    </header>
+   
+
+
+    <section class="banner">
+        <h2>Welcome to the Ultimate Gaming Blog!</h2> 
+    </section>
+    
+    
+    <section id="home" class="container">
+     
+
+        <h2>🔥 Latest Gaming Trends & News</h2>
+        <p>Stay updated with the hottest games, releases, and reviews.</p>
+        <div class="ad">
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </section>
+    
+    <section id="games" class="container">
+        <h2>🎮 Featured Games</h2>
+        <div class="game-container">
+            <div class="game">
+                <img src="game/dota.png" alt="Game 1">
+                <h3>Dota 2</h3>
+            </div>
+            <div class="game">
+                <img src="game/valorant.png" alt="Game 1">
+                <h3>Valorant</h3>
+            </div>
+            <div class="game">
+                <img src="game/mlbb.png" alt="Game 1">
+                <h3>Mobile Legends</h3>
+            </div>
+            <div class="game">
+                <img src="game/cs2.png" alt="Game 1">
+                <h3>Counter-Strike 2</h3>
+            </div>
+            <div class="game">
+                <img src="game/fortnite.png" alt="Game 1">
+                <h3>Fortnite</h3>
+            </div>
+          
+            
+        </div>
+    </section>
+    
+    <section id="reviews" class="container">
+        <section id="reviews" class="container">
+            <h2>🎩 Latest Game Reviews</h2>
+            <div class="review-container">
+                <div class="review">
+                    <img src="game/dota.png" alt="Game Review 1">
+                    <div class="review-content">
+                        <h3>Dota 2</h3>
+                        <p>"Dota 2 is brutal, addictive, and insanely rewarding. Every match is a new challenge—win or lose, you keep coming back."</p>
+                        <div class="star-rating">
+                            ★★★★★
+                        </div>
+                    </div>
+                </div>
+                <div class="review">
+                    <img src="game/cs2.png" alt="Game Review 2">
+                    <div class="review-content">
+                        <h3>Counter Strike 2</h3>
+                        <p>"As a player, CS2 feels smoother and visually upgraded, but the hit reg and some mechanics still need fine-tuning to match CS:GO’s precision."</p>
+                        <div class="star-rating">
+                            ★★★★
+                        </div>
+                    </div>
+                </div>
+                <div class="review">
+                    <img src="game/fortnite.png" alt="Game Review 3">
+                    <div class="review-content">
+                        <h3>Fortnite</h3>
+                        <p>"As a player, Fortnite remains fun with its constant updates, unique mechanics, and creative modes, but skill-based matchmaking can make casual play frustrating."</p>
+                        <div class="star-rating">
+                            ★★★★
+                        </div>
+                    </div>
+                </div>
+                <div class="review">
+                    <img src="game/valorant.png" alt="Game Review 3">
+                    <div class="review-content">
+                        <h3>Valorant</h3>
+                        <p>"As a player, Valorant offers tight gunplay, strategic depth, and satisfying teamwork, but the ranked grind and agent balancing can be frustrating at times."</p>
+                        <div class="star-rating">
+                            ★★★★
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    
+    <section id="news" class="container">
+        <h2>🚀 Gaming News</h2>
+    <div class="news-container">
+        <div class="news-item">
+            <img src="game/news-dota.png" alt="News 1">
+            <h5>December 6, 2024</h5>
+            <h3>The Crownfall Archive</h3>
+            <p>Play Dota to unlock exotic locations, new characters and dark secrets in an ongoing story event filled with legendary heroes and unique rewards. Available now to all Dota players for free.</p>
+            <a href="https://www.dota2.com/news/updates" class="read-more">Read More</a>
+        </div>
+        <div class="news-item">
+            <img src="game/new-valorant.png" alt="News 2">
+            <h5>Febuary 4, 2025</h5>
+            <h3>Patch Notes 10.02</h3>
+            <p>Small patch with important bug fixes to Agents and more.</p>
+            <a href="https://playvalorant.com/en-us/news/game-updates/valorant-patch-notes-10-02/" class="read-more">Read More</a>
+        </div>
+        <div class="news-item">
+            <img src="game/cs2.png" alt="News 3">
+            <h5>Febuary 14, 2025</h5>
+            <h3>Counter-Strike 2 Update</h3>
+            <p>Fixed sizing and scaling of UI elements shared between buy menu and in-game HUD.</p>
+            <a href="https://www.counter-strike.net/news/updates" class="read-more">Read More</a>
+        </div>
+        <div class="news-item">
+            <img src="game/fortnite.png" alt="News 3">
+            <h5>Febuary 14, 2025</h5>
+            <h3>Fortnite Island Creator Rules</h3>
+            <p>The Fortnite Creative & Unreal Editor for Fortnite tools allow you to create islands that can be published within Fortnite.</p>
+            <a href="https://www.fortnite.com/news/fortnite-island-creator-rules" class="read-more">Read More</a>
+        </div>
+    </div>
+    </section>
+    
+    <section id="videos" class="container">
+        <h2>🎥 Latest Gaming Videos</h2>
+        <div class="video-container">
+            <iframe width="50%" height="60%" src="https://www.youtube.com/embed/KV0Y_VRgPgQ?si=DMy1DYKoU3haGnY_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+            <iframe width="50%" height="60%" src="https://www.youtube.com/embed/EZQaQv9g4JA?si=GuxRDW6Io19WyNY0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            
+            <iframe width="50%" height="60%" src="https://www.youtube.com/embed/wRSLOy5JhB0?si=_fO7_tFXTpLXU-1A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </section>
+    
+    <section id="ads" class="container">
+        <h2>💰 Sponsored Ads</h2>
+        <div class="ad">
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Gaming Zone. All Rights Reserved.</p>
+    </footer>
+
+
+    <script>
+       
+        document.querySelectorAll('.navbar a').forEach(anchor => {
+            anchor.addEventListener('click', function(event) {
+                event.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+ 
+
+
+
+        function toggleMenu() {
+            document.querySelector(".navbar").classList.toggle("show");
+        }
+
+    </script>
+
+</body>
+</html>
